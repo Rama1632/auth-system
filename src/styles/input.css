@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background:
+      radial-gradient(circle at top, rgba(34, 211, 238, 0.14), transparent 32%),
+      linear-gradient(180deg, #020617 0%, #0f172a 52%, #020617 100%);
+  }
+
+  ::selection {
+    background-color: rgba(103, 232, 249, 0.3);
+    color: #e2e8f0;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply border border-white/10 bg-white/10 shadow-panel backdrop-blur-xl;
+  }
+}

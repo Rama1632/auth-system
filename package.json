@@ -1,0 +1,25 @@
+{
+  "name": "intern-assignment-portal",
+  "version": "1.0.0",
+  "description": "Full stack internship assignment with file-based authentication and admin user management.",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run build:css && node server.js",
+    "dev": "node --watch server.js",
+    "build:css": "tailwindcss -i ./src/styles/input.css -o ./public/styles.css --minify"
+  },
+  "keywords": [
+    "express",
+    "tailwindcss",
+    "auth",
+    "file-storage"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "tailwindcss": "^3.4.17"
+  }
+}

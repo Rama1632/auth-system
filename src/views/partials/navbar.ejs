@@ -1,0 +1,50 @@
+<header class="relative z-10">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
+    <a href="/" class="flex items-center gap-3 text-sm font-semibold tracking-[0.24em] text-slate-100 uppercase">
+      <span class="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-base font-bold text-cyan-200 shadow-panel">
+        AP
+      </span>
+      Auth Portal
+    </a>
+
+    <nav class="flex items-center gap-3">
+      <% if (currentUser) { %>
+        <a
+          href="/dashboard"
+          class="rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-cyan-300/50 hover:text-white"
+        >
+          Dashboard
+        </a>
+        <% if (currentUser.role === "admin") { %>
+          <a
+            href="/admin/users"
+            class="rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-cyan-300/50 hover:text-white"
+          >
+            Manage Users
+          </a>
+        <% } %>
+        <form action="/logout" method="post">
+          <button
+            type="submit"
+            class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-cyan-100"
+          >
+            Logout
+          </button>
+        </form>
+      <% } else { %>
+        <a
+          href="/login"
+          class="rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-cyan-300/50 hover:text-white"
+        >
+          Login
+        </a>
+        <a
+          href="/signup"
+          class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-cyan-100"
+        >
+          Sign Up
+        </a>
+      <% } %>
+    </nav>
+  </div>
+</header>
